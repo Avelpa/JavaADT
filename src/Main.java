@@ -14,12 +14,17 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        MyStack stack = new MyStack();
+        MyQueue queue = new MyQueue();
         
-        stack.push(new Node(1));
-        stack.push(new Node(2));
-        System.out.println(stack.pop().getValue());
-        System.out.println(stack.peek().getValue());
-        System.out.println(stack.size());
+        queue.enqueue(new Node(1));
+        queue.enqueue(new Node(2));
+        queue.enqueue(new Node(3));
+        //System.out.println(queue.peek().getValue());
+        /*
+        System.out.println(queue.dequeue().getValue());
+        System.out.println(queue.peek().getValue());
+        System.out.println(queue.size());*/
+        queue.print();
+        
     }
 }

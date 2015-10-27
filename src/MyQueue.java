@@ -8,21 +8,44 @@
  *
  * @author Dmitry
  */
-public class MyStack {
+public class MyQueue {
+    
     private Node top;
     private int length;
     
-    public MyStack()
+    public MyQueue()
     {
         top = null;
         length = 0;
     }
     
-    public void push(Node node)
+    public void enqueue(Node node)
     {
-        node.setChildNode(top);
-        top = node;
+        if (!isEmpty())
+        {
+            top.setChildNode(node);
+        }
+        else
+        {
+            top = node;
+        }
         length ++;
+    }
+    
+    public Node dequeue()
+    {
+        Node firstItem = null;
+        length --;
+        if (!isEmpty())
+        {
+            firstItem = top;
+            top = top.getChildNode();
+        }
+        else
+        {
+            top = null;
+        }
+        return firstItem;
     }
     
     public Node peek()
@@ -30,26 +53,14 @@ public class MyStack {
         return top;
     }
     
-    public Node pop()
+    public int size()
     {
-        Node nextNode = null;
-        if (!isEmpty())
-        {
-            nextNode = top;
-            top = top.getChildNode();
-            length --;
-        }
-        return nextNode;
+        return length;
     }
     
     public boolean isEmpty()
     {
         return length == 0;
-    }
-    
-    public int size()
-    {
-        return length;
     }
     
     public void print()
