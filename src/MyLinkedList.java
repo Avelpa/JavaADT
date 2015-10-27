@@ -42,7 +42,7 @@ public class MyLinkedList {
         {
             Node nextNode = head;
             // ignore first element
-            for (int i = 1; i < index && i < length; i ++)
+            for (int i = 0; i < index-1 && i < length; i ++)
             {
                 nextNode = nextNode.getChildNode();
             }
