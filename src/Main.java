@@ -13,14 +13,13 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        MyLinkedList list = new MyLinkedList();
         
-        list.add(new Node(2));
-        list.add(new Node(3));
-        list.add(new Node(4));
+        MyStack stack = new MyStack();
         
-        
-        list.remove(2);
-        list.printList();
+        stack.push(new Node(1));
+        stack.push(new Node(2));
+        System.out.println(stack.pop().getValue());
+        System.out.println(stack.peek().getValue());
+        System.out.println(stack.size());
     }
 }
