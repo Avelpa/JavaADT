@@ -24,7 +24,14 @@ public class Main {
         System.out.println(queue.dequeue().getValue());
         System.out.println(queue.peek().getValue());
         System.out.println(queue.size());*/
+        
+        
         queue.print();
+        
+        System.out.println(" " + queue.dequeue().getValue());
+        System.out.println("" + queue.peek().getValue());
+        System.out.println(" " + queue.dequeue().getValue());
+        System.out.println(" " + queue.dequeue().getValue());
         
     }
 }

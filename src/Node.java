@@ -11,6 +11,7 @@ public class Node {
     
     private int value;
     private Node childNode;
+    private Node parentNode;
     
     /**
      * Creates a node with a value but no child node
@@ -48,6 +49,24 @@ public class Node {
     {
         this.childNode = newChildNode;
     }
+    
+    /**
+     * Get the parent node
+     * @return the parent node
+     */
+    public Node getParentNode()
+    {
+        return parentNode;
+    }
+    /**
+     * Set the parent  node
+     * @param newParentNode the new parent node
+     */
+    public void setParentNode(Node newParentNode)
+    {
+        this.parentNode = newParentNode;
+    }
+    
     /**
      * Gets the node's value
      * @return the node's value

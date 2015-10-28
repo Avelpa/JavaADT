@@ -11,11 +11,13 @@
 public class MyQueue {
     
     private Node top;
+    private Node end;
     private int length;
     
     public MyQueue()
     {
         top = null;
+        end = null;
         length = 0;
     }
     
@@ -23,29 +25,27 @@ public class MyQueue {
     {
         if (!isEmpty())
         {
-            top.setChildNode(node);
+            end.setChildNode(node);
+            node.setParentNode(end.getParentNode());
+            end = node;
         }
         else
         {
             top = node;
+            end = node;
         }
         length ++;
     }
     
     public Node dequeue()
     {
-        Node firstItem = null;
-        length --;
+        Node topNode = top;
         if (!isEmpty())
         {
-            firstItem = top;
             top = top.getChildNode();
         }
-        else
-        {
-            top = null;
-        }
-        return firstItem;
+        length --;
+        return topNode;
     }
     
     public Node peek()
